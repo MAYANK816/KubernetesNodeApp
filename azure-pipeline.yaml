@@ -12,7 +12,6 @@ variables:
 steps:
 - task: AzureCLI@2
   inputs:
-    azureSubscription: 'Free Trial'
     scriptLocation: 'inlineScript'
     inlineScript: |
       az acr login --name $(containerRegistry)
