@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: mcr.microsoft.com/oss/nginx/nginx:1.15.2-alpine
+          image: bajajnodeappregistry.azurecr.io/nodejsapp
           ports:
           - containerPort: 80
 ---
