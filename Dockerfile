@@ -1,7 +1,6 @@
 FROM node:alpine
 # Create a directory to hold the application code inside the image, this will be the working directory for your application
-WORKDIR /usr/app
-
+WORKDIR /app
 # Copy package.json and package-lock.json to the WORKDIR
 COPY package*.json ./
 
