@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -13,16 +14,19 @@ spec:
         app: node-app
     spec:
       containers:
-      - name: node-app
-        image: bajajnodeappregistry.azurecr.io/node-app:latest
-        imagePullPolicy: Always
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
-        ports:
-        - containerPort: 8001
----        
+        - name: node-app
+          image: bajajnodeappregistry.azurecr.io/node-app:latest
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: 128Mi
+              cpu: 500m
+          ports:
+            - containerPort: 8001
+          secret:
+            secretName: mysecret
+
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -31,7 +35,7 @@ spec:
   selector:
     app: node-app
   ports:
-  - protocol: TCP
-    port: 8001
-    targetPort: 8001
+    - protocol: TCP
+      port: 8001
+      targetPort: 8001
   type: LoadBalancer
