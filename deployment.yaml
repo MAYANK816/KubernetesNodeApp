@@ -23,8 +23,10 @@ spec:
               cpu: 500m
           ports:
             - containerPort: 8001
+      volumes:
+        - name: newsecret
           secret:
-            secretName: mysecret
+              secretName: newsecret      
 
 ---
 apiVersion: v1
