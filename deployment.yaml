@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: node-app
-          image: bajajnodeappregistry.azurecr.io/node-app:latest
+          image: bajajnodeappregistry.azurecr.io/mayank816/kubernetesnodeapp:latest
           imagePullPolicy: Always
           resources:
             limits:
